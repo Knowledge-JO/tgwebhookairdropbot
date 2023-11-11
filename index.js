@@ -178,3 +178,5 @@ getReferrals();
 getUserId();
 addNewChatMembersToDB();
 makeFetchRequest();
+
+module.exports = expressApp;
