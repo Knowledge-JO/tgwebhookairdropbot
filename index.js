@@ -109,7 +109,9 @@ const getUserId = () => {
       const userAirdropPasscode = userDocs.airdropPasscode;
       const text = `Hi @${msg.chat.username}\nYour airdrop passCode: ${userAirdropPasscode}
     `;
+      await makeFetchRequest();
       await bot.sendMessage(chatId, text);
+      await makeFetchRequest();
     } catch (err) {
       console.log(err);
     }
@@ -168,21 +170,16 @@ const generateRandomNumbers = () => {
 };
 
 // to keep bot running
-// const makeFetchRequest = () => {
-//   setInterval(() => {
-//     try {
-//       fetch(url).then((res) => {
-//         console.log(res, "fetched");
-//       });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }, 30 * 1000);
-// };
+const makeFetchRequest = async () => {
+  try {
+    const res = await fetch(url);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 getReferrals();
 getUserId();
 addNewChatMembersToDB();
-// makeFetchRequest();
 
 module.exports = expressApp;
