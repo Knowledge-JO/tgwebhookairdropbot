@@ -168,9 +168,15 @@ const generateRandomNumbers = () => {
 };
 
 // to keep bot running
-const makeFetchRequest = async () => {
-  setInterval(async () => {
-    const res = await fetch(url);
+const makeFetchRequest = () => {
+  setInterval(() => {
+    try {
+      fetch(url).then((res) => {
+        console.log(res, "fetched");
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }, 30 * 1000);
 };
 
