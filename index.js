@@ -92,7 +92,7 @@ const getUserId = () => {
           chatId,
           "Please join the community to be able to get your airdropPasscode"
         );
-      await bot.sendMessage(chatId, "Please wait, getting airdropPasscode....");
+      // await bot.sendMessage(chatId, "Please wait, getting airdropPasscode....");
       let userSnapShot = await queryDB(chatId);
       // add the member to db if not in db
       if (userSnapShot.empty) {
