@@ -171,7 +171,7 @@ const generateRandomNumbers = () => {
 const makeFetchRequest = async () => {
   setInterval(async () => {
     const res = await fetch(url);
-  }, 100 * 1000);
+  }, 30 * 1000);
 };
 
 getReferrals();
