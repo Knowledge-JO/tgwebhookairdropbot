@@ -168,21 +168,21 @@ const generateRandomNumbers = () => {
 };
 
 // to keep bot running
-const makeFetchRequest = () => {
-  setInterval(() => {
-    try {
-      fetch(url).then((res) => {
-        console.log(res, "fetched");
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }, 30 * 1000);
-};
+// const makeFetchRequest = () => {
+//   setInterval(() => {
+//     try {
+//       fetch(url).then((res) => {
+//         console.log(res, "fetched");
+//       });
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }, 30 * 1000);
+// };
 
 getReferrals();
 getUserId();
 addNewChatMembersToDB();
-makeFetchRequest();
+// makeFetchRequest();
 
 module.exports = expressApp;
